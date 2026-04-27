@@ -12,7 +12,7 @@ jobs:
         run: echo "Workflow Triggering through Repo_Dispatch"
         
       - name: Event Type
-        run: echo "Event Type: ${{ github.event.action }}"
+        run: echo "Event Type ${{ github.event.action }}"
         
       - name: Payload Data
         run: |
