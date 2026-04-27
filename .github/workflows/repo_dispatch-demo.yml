@@ -1,0 +1,20 @@
+name: Repository_Dispatch Demp Practice
+
+on:
+    repository_dispatch:
+        types: [my-custom-event]
+
+jobs:
+    say-hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Workflow Triggering
+              run: echo "Workflow Triggering through Repo_Dispatch"
+            - name: Event Type
+              run: echo "Event Type: ${{ github.event.action }}"
+            - name: Payload Data
+              run: |
+                echo "Message: ${{ github.event.client_payload.message}}"
+                echo "Name: ${{ github.event.client_payload.name }}"
+                
+
